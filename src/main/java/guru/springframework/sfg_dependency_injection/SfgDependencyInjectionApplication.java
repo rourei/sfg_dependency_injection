@@ -19,9 +19,8 @@ public class SfgDependencyInjectionApplication {
 		MyController myController = (MyController) ctx.getBean("myController");
 		// The object is being created by the framework and can be retrieved from the context
 
-		// Save the returned greeting and print it to the console
-		String  greeting = myController.sayHello();
-		System.out.println(greeting);
+		System.out.println("----------- Primary");
+		System.out.println(myController.sayHello()); // prints the message from the Primary Bean
 
 		// Make Spring manage the dependency injection for the property injected controller
 		System.out.println("----------- Property");
