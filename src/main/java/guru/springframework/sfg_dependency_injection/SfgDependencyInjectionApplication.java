@@ -38,6 +38,12 @@ public class SfgDependencyInjectionApplication {
 		System.out.println("----------- Profile controlled");
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println(i18nController.sayHello());
+
+		// Instantiate an I18NController via Spring Context
+		System.out.println("----------- Pet Controllers");
+		PetController petController = ctx.getBean("petController", PetController.class);
+		System.out.println("--- The Best Pet is ---");
+		System.out.println(petController.whichPetIsTheBest());
 	}
 
 }
