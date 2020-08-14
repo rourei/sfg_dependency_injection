@@ -2,6 +2,7 @@ package guru.springframework.sfg_dependency_injection.controllers;
 
 import guru.springframework.sfg_dependency_injection.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 // Uses a setter method to inject the dependency.
@@ -13,6 +14,7 @@ public class SetterInjectedController {
     private GreetingService greetingService;
 
     // This setter will be used to inject the implementation of the interface at runtime (by the test class)
+    @Qualifier("setterGreetingService") // define which Bean should be injected
     @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;

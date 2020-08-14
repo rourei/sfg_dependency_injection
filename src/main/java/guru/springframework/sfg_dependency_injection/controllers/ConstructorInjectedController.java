@@ -2,6 +2,7 @@ package guru.springframework.sfg_dependency_injection.controllers;
 
 import guru.springframework.sfg_dependency_injection.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 // This controller uses its constructor for dependency injection of an object at runtime.
@@ -15,7 +16,8 @@ public class ConstructorInjectedController {
 
     // This constructor will be used to inject the implementation of the interface at runtime (by the test class)
     // @Autowired OPTIONAL SINCE SPRING 5!
-    public ConstructorInjectedController(GreetingService greetingService) {
+    // define which Bean should be injected with @Qualifier
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

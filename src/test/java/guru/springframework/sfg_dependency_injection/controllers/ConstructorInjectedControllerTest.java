@@ -1,10 +1,8 @@
 package guru.springframework.sfg_dependency_injection.controllers;
 
-import guru.springframework.sfg_dependency_injection.services.GreetingServiceImpl;
+import guru.springframework.sfg_dependency_injection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 // This is basically what the Spring framework does and it is the preferred method for dependency injection.
 
@@ -16,7 +14,7 @@ class ConstructorInjectedControllerTest {
     @BeforeEach
     void setUp() {
         // Create an instance of the controller and inject the dependency directly inside the constructor
-        controller = new ConstructorInjectedController(new GreetingServiceImpl());
+        controller = new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test

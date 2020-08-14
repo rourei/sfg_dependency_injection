@@ -1,10 +1,8 @@
 package guru.springframework.sfg_dependency_injection.controllers;
 
-import guru.springframework.sfg_dependency_injection.services.GreetingServiceImpl;
+import guru.springframework.sfg_dependency_injection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 // Uses the setter to inject the greeting service.
 
@@ -18,7 +16,7 @@ class SetterInjectedControllerTest {
         // Create an instance of the controller
         controller = new SetterInjectedController();
         // Use the provided setter to inject the dependency
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
