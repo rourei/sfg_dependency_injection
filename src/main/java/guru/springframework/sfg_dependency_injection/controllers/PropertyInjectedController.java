@@ -1,12 +1,16 @@
 package guru.springframework.sfg_dependency_injection.controllers;
 
 import guru.springframework.sfg_dependency_injection.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 // This is the least preferred method for dependency injection since it provides bad testability.
 
+@Controller
 public class PropertyInjectedController {
 
     // This public member will be holding the injected objected
+    @Autowired
     public GreetingService greetingService;
 
     // Method to be tested
