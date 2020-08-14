@@ -15,7 +15,7 @@ class ConstructorInjectedControllerTest {
 
     @BeforeEach
     void setUp() {
-        // Create an instance of the controller and inject the dependency directly inside the construcor
+        // Create an instance of the controller and inject the dependency directly inside the constructor
         controller = new ConstructorInjectedController(new GreetingServiceImpl());
     }
 
